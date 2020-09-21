@@ -16,7 +16,7 @@
     "@babel/core": "7.9.0"
   },
   "scripts": {
-    "json-server": "json-server --watch json-server/db.json -p 3001 -d 2000",
+    "json-server": "cd json-server && json-server --host 192.168.0.20 --watch db.json -p 3001 -d 2000",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
