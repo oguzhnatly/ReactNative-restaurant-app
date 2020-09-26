@@ -5,7 +5,7 @@ import Menu from './MenuComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Reservation from './ReservationComponent';
-import Favorites from './FavoriteComponent';
+import Favorites from './FavoritesComponent';
 import { View, Platform, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import { DISHES } from '../shared/dishes';
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation';
