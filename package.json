@@ -1,10 +1,14 @@
 {
   "dependencies": {
+    "@react-native-community/datetimepicker": "^3.0.2",
     "expo": "~38.0.0",
+    "moment": "^2.29.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-elements": "^1.0.0-beta8",
+    "react-native-elements": "^1.2.7",
+    "react-native-ratings": "^7.3.0",
+    "react-native-swipeout": "2.3.3",
     "react-native-web": "0.11.7",
     "react-navigation": "git://github.com/Snailapp/react-navigation.git#2.18.4",
     "react-redux": "5.0.7",
@@ -16,7 +20,7 @@
     "@babel/core": "7.9.0"
   },
   "scripts": {
-    "json-server": "cd json-server && json-server --host 192.168.1.41 --watch db.json -p 3001 -d 2000",
+    "json-server": "cd json-server && json-server --host 192.168.0.20 --watch db.json -p 3001 -d 2000",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

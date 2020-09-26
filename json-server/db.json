@@ -201,6 +201,22 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "dishId": 0,
+      "rating": 5,
+      "author": "Sııs7w7",
+      "comment": "Wklepd",
+      "date": "2020-09-26T19:04:42.766Z",
+      "id": 20
+    },
+    {
+      "dishId": 0,
+      "rating": 4,
+      "author": "Full name",
+      "comment": "Commenntt test",
+      "date": "2020-09-26T19:06:14.267Z",
+      "id": 21
     }
   ],
   "promotions": [
