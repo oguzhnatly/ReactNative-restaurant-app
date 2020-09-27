@@ -185,21 +185,6 @@ const MainNavigator = createDrawerNavigator({
         ),
       }, 
     },
-  Reservation:
-    { screen: ReservationNavigator,
-      navigationOptions: {
-        title: 'Reserve Table',
-        drawerLabel: 'Reserve Table',
-        drawerIcon: ({ tintColor, focused }) => (
-          <Icon
-            name='cutlery'
-            type='font-awesome'            
-            size={24}
-            iconStyle={{ color: tintColor }}
-          />
-        ),
-      }
-    },
   Favorites:
     { screen: FavoritesNavigator,
       navigationOptions: {
@@ -208,6 +193,21 @@ const MainNavigator = createDrawerNavigator({
         drawerIcon: ({ tintColor, focused }) => (
           <Icon
             name='heart'
+            type='font-awesome'            
+            size={24}
+            iconStyle={{ color: tintColor }}
+          />
+        ),
+      }
+    },
+  Reservation:
+    { screen: ReservationNavigator,
+      navigationOptions: {
+        title: 'Reserve Table',
+        drawerLabel: 'Reserve Table',
+        drawerIcon: ({ tintColor, focused }) => (
+          <Icon
+            name='cutlery'
             type='font-awesome'            
             size={24}
             iconStyle={{ color: tintColor }}
