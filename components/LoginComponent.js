@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { Input, CheckBox, Button, Icon } from 'react-native-elements';
+import { createBottomTabNavigator } from 'react-navigation';
+import { baseUrl } from '../shared/baseUrl';
 import * as SecureStore from 'expo-secure-store';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-import { createBottomTabNavigator } from 'react-navigation';
-import { baseUrl } from '../shared/baseUrl';
+import { Asset } from 'expo-asset';
+import * as ImageManipulator from "expo-image-manipulator";
+import { Camera } from 'expo-camera';
 
 class LoginTab extends Component {
     constructor(props) {
@@ -125,7 +128,6 @@ class RegisterTab extends Component {
     getImageFromCamera = async () => {
         const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
         const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
         if (cameraPermission.status === 'granted' && cameraRollPermission.status === 'granted') {
             let capturedImage = await ImagePicker.launchCameraAsync({
                 allowsEditing: true,
@@ -133,10 +135,20 @@ class RegisterTab extends Component {
             });
             if (!capturedImage.cancelled) {
                 console.log(capturedImage);
-                this.setState({imageUrl: capturedImage.uri });
+                this.processImage(capturedImage.uri);
             }
         }
-
+    }
+    processImage = async (imageUri) => {
+        let processedImage = await ImageManipulator.manipulate(
+            imageUri, 
+            [
+                {resize: {width: 400}}
+            ],
+            {format: 'png'}
+        );
+        console.log(processedImage);
+        this.setState({imageUrl: processedImage.uri });
     }
     static navigationOptions = {
         title: 'Register',
