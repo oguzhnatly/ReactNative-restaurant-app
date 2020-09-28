@@ -2,6 +2,7 @@
   "dependencies": {
     "@react-native-community/datetimepicker": "^3.0.2",
     "expo": "~38.0.0",
+    "expo-mail-composer": "~8.2.1",
     "expo-permissions": "~9.0.1",
     "expo-secure-store": "~9.0.1",
     "moment": "^2.29.0",
@@ -24,7 +25,7 @@
     "@babel/core": "7.9.0"
   },
   "scripts": {
-    "json-server": "cd json-server && json-server --host 192.168.1.37 --watch db.json -p 3001 -d 2000",
+    "json-server": "cd json-server && json-server --host 192.168.0.20 --watch db.json -p 3001 -d 2000",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
