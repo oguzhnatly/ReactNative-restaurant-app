@@ -7,7 +7,8 @@ import Contact from './ContactComponent';
 import Reservation from './ReservationComponent';
 import Favorites from './FavoritesComponent';
 import Login from './LoginComponent';
-import { View, Platform, Text, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, Platform, Text, ScrollView, Image, StyleSheet, ToastAndroid } from 'react-native';
+import NetInfo from "@react-native-community/netinfo";
 import { DISHES } from '../shared/dishes';
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -300,18 +301,41 @@ class Main extends Component {
       selectedDish: null
     };
   }
-
   onDishSelect(dishId) {
       this.setState({selectedDish: dishId})
   }
-
   componentDidMount() {
     this.props.fetchDishes();
     this.props.fetchComments();
     this.props.fetchPromos();
     this.props.fetchLeaders();
+    
+    NetInfo.fetch().then((connectionInfo) => {
+      ToastAndroid.show('Initial Network Connectivity Type: ' + connectionInfo.type, ToastAndroid.LONG)
+    });
+    NetInfo.addEventListener(connectionChange => this.handleConnectivityChange(connectionChange))
   }
-
+  componentWillUnmount() {
+    NetInfo.removeEventListener(connectionChange => this.handleConnectivityChange(connectionChange))
+  }
+  handleConnectivityChange = (connectionInfo) => {
+    switch (connectionInfo.type) {
+      case 'none': 
+        ToastAndroid.show ('You are now offline', ToastAndroid.LONG);
+        break;
+      case 'wifi':
+        ToastAndroid.show ('You are now on WiFi', ToastAndroid.LONG);
+        break;
+      case 'cellular':
+        ToastAndroid.show ('You are now on Cellular', ToastAndroid.LONG);
+        break;
+      case 'unknown' :
+        ToastAndroid.show ('You are now have an Unknown connection', ToastAndroid.LONG);
+        break;
+      default:
+        break;
+    }
+  }
   render() {
     return (
       <View style={{flex:1, paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight }}>
