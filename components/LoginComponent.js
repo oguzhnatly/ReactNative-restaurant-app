@@ -139,16 +139,34 @@ class RegisterTab extends Component {
             }
         }
     }
+    getImageFromGallery = async () => {
+        const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        if (cameraRollPermission.status === 'granted') {
+            const libraryImage = await ImagePicker.launchImageLibraryAsync({
+                allowsEditing: true,
+                aspect: [4, 3],
+                mediaTypes: 'Images',
+            });
+            if (!libraryImage.cancelled) {
+                console.log(result);
+                this.processImage(result.uri);
+            }
+        }
+    }
     processImage = async (imageUri) => {
-        let processedImage = await ImageManipulator.manipulate(
-            imageUri, 
-            [
-                {resize: {width: 400}}
-            ],
-            {format: 'png'}
-        );
-        console.log(processedImage);
-        this.setState({imageUrl: processedImage.uri });
+        try {
+            const processedImage = await ImageManipulator.manipulateAsync(
+                imageUri,
+                [
+                    { resize: { width: 400 } },
+                ],
+                {format: 'png'},
+            );
+            console.log(processedImage);
+            this.setState({imageUrl: processedImage.uri });
+        } catch (error) {
+            console.log(error);
+        }
     }
     static navigationOptions = {
         title: 'Register',
@@ -180,6 +198,12 @@ class RegisterTab extends Component {
                     <Button
                         title="Camera"
                         onPress={this.getImageFromCamera}
+                        style={styles.imageButtons} 
+                    />
+                    <Button
+                        title="Gallery"
+                        onPress={this.getImageFromGallery}
+                        style={styles.imageButtons} 
                     />
                 </View>
                 <Input
@@ -253,7 +277,11 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 1,
         flexDirection: 'row',
-        margin: 20
+        margin: 20,
+        justifyContent: "space-around"
+    },
+    imageButtons: {
+        justifyContent: "space-around"
     },
     image: {
       margin: 10,
