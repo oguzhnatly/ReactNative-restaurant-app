@@ -1,44 +1,24 @@
-# My Universal React Project
+# Multiplatform Mobile App Development with React Native
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.io/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+Topics covered in this section are:
 
-## 🚀 How to use
+-   Using Create-react-app
+-   Integrating git, npm and using NodeJs
+-   Integrating various packages
+-   Project involved Creating the UI for a restaurant Using React Native
+-   Instructor - `Professor Jogesh Muppala`
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Adding Native Code
+## Available Scripts
 
-This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
+### First of all, you must use this script in order to connect database. `cd json-server` and then `json-server --host 192.1*.*.* --watch db.json -p 3001 -d 2000 (replace * it with your computers IP address)`
+If you want, you can customize npm json-server command in package.json file. Just change example IP address with your computers IP address.
 
-- Run `yarn eject` to create the native projects.
-- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
+### Start project in your terminal using `yarn start`, `npm start` or `expo start`.
 
-## Publishing
+### Install and run expo on your android or ios device to view the app.
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.io/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.io/distribution/publishing-websites/).
+### (*) `npm run build`
 
-## 📝 Notes
-
-- Learn more about [Universal React](https://docs.expo.io/).
-- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+Builds the app for production to the `build` folder. It correctly bundles React Native in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
