@@ -19,7 +19,7 @@
     "react-native-elements": "^1.2.7",
     "react-native-ratings": "^7.3.0",
     "react-native-swipeout": "2.3.3",
-    "react-native-web": "0.11.7",
+    "react-native-web": "0.14.10",
     "react-navigation": "git://github.com/Snailapp/react-navigation.git#2.18.4",
     "react-redux": "5.0.7",
     "redux": "4.0.0",
