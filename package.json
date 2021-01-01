@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@react-native-community/datetimepicker": "^3.0.2",
+    "@react-native-community/datetimepicker": "^3.0.8",
     "@react-native-community/netinfo": "^5.9.7",
     "expo": "~38.0.0",
     "expo-asset": "~8.1.7",
