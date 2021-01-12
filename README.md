@@ -12,7 +12,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-### First of all, you must use this script in order to connect database. `cd json-server` and then `json-server --host 192.1*.*.* --watch db.json -p 3001 -d 2000 (replace * it with your computers IP address)`
+### First of all, you must use the script below in order to connect database:
+```sh
+$ cd json-server 
+$ json-server --host 192.1*.*.* --watch db.json -p 3001 -d 2000 (replace * it with your computers IP address)
+```
 If you want, you can customize npm json-server command in package.json file. Just change example IP address with your computers IP address.
 
 ### Start project in your terminal using `yarn start`, `npm start` or `expo start`.
